@@ -9,8 +9,30 @@
 
 
 /*--------------------------------------------------------------
+/*Loading page pagina de presentacion*/
+
+.jm-loadingpage {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 999999999;
+    background: url(../img/Carga.gif) center no-repeat #fff;
+}
+
+
+/*Loading page
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+html {
+    transition: all 0.2s;
+}
 
 body {
     font-family: "Open Sans", sans-serif;
@@ -37,6 +59,24 @@ h5,
 h6 {
     font-family: "Raleway", sans-serif;
 }
+
+
+/*------ configuracion modo oscuro ----------*/
+
+html.darkmode {
+    filter: invert(100%);
+}
+
+html.darkmode #hero {
+    filter: invert(100%);
+}
+
+html.darkmode img {
+    filter: invert(100%);
+}
+
+
+/*------- fin modo oscuro -----------*/
 
 
 /*--------------------------------------------------------------
@@ -141,7 +181,7 @@ h6 {
 #header {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     bottom: 0;
     z-index: 9997;
     transition: all 0.5s;
@@ -154,13 +194,13 @@ h6 {
         width: 300px;
         background: #fff;
         border-right: 1px solid #e6e9ec;
-        left: -300px;
+        right: -300px;
     }
 }
 
 @media (min-width: 992px) {
     #main {
-        margin-left: 100px;
+        margin-right: 100px;
     }
 }
 
@@ -257,6 +297,7 @@ h6 {
 .mobile-nav-toggle {
     position: fixed;
     right: 10px;
+    /*ubicacion del menu hamburguesa*/
     top: 10px;
     z-index: 9998;
     border: 0;
@@ -279,7 +320,7 @@ h6 {
 }
 
 .mobile-nav-active #header {
-    left: 0;
+    right: 0;
 }
 
 .mobile-nav-active .mobile-nav-toggle {
@@ -289,7 +330,7 @@ h6 {
 
 
 /*--------------------------------------------------------------
-# Hero Section
+# Hero Section   Portada de la pagina
 --------------------------------------------------------------*/
 
 #hero {
@@ -301,15 +342,16 @@ h6 {
     background-size: cover;
     /*que tome el valor original de la imagen*/
     position: relative;
+    background-attachment: fixed;
 }
 
 .rg_sombra {
     position: absolute;
     /*posicion absoluta es decir flotante*/
-    /*eft: 50%;*/
-    /*desde la izaquierda flote 50%*/
-    top: 50%;
-    /*desde arriba flote un 50%*/
+    left: 15%;
+    /*desde la izaquierda flote 15%*/
+    top: 70%;
+    /*desde arriba flote un 70%*/
     -ms-transform: translate(-50%, -50%);
     /*estos atributos sirve para que nuestra pag se vean en otros navegadores*/
     -webkit-transform: translate(-50%, -50%);
@@ -318,10 +360,10 @@ h6 {
     padding: 20px;
     /*que el contenido se separen del contenedor 20px*/
     width: 40%;
-    /*ancho del sombreado sea de un 80% del total de la pantalla*/
+    /*ancho del sombreado sea de un 40% del total de la pantalla*/
     text-align: center;
     /*texto alineado en forma central*/
-    background-color: rgba(46, 45, 45, 0.062);
+    background-color: rgba(46, 45, 45, 0.250);
     /*color de fondo negro con una transparencia de 0.6*/
     color: #FFFFFF;
     /*color de letras blancas*/
@@ -455,10 +497,19 @@ section {
 # About
 --------------------------------------------------------------*/
 
+.rg_img-fluid {
+    border-radius: 80px;
+    opacity: 0.7;
+}
+
+.about .section-title h2 {
+    color: #111;
+}
+
 .about .content h3 {
     font-weight: 700;
     font-size: 26px;
-    color: #728394;
+    color: #ffffff;
 }
 
 .about .content ul {
@@ -499,6 +550,8 @@ section {
     position: relative;
     text-align: center;
     background: #fff;
+    border-radius: 50%;
+    transition: all 0.7s ease-in;
 }
 
 .facts .count-box i {
@@ -1096,6 +1149,7 @@ section {
     transition: all ease-in-out 0.3s;
     background: #fff;
     box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
+    border-radius: 40px;
 }
 
 .services .icon-box .icon {
