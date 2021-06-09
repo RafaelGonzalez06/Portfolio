@@ -9,7 +9,11 @@
 
   
   if(mysqli_query($conexion, "INSERT INTO correo (nombre,correo,asunto,mensaje) values ('$nombre','$correo','$asunto','$mensaje')")){
-    echo "Se insertaron Correctamente";
+    //echo "Se insertaron Correctamente";
+    echo '<script>alert("El envío del formulario ha concluído exitosamente")</script>';
+    //echo '<script> window.history.back(); <script>';
+    header('Location: index.html');
+    exit();
   }
   else{
     echo "Hubo un error.";
