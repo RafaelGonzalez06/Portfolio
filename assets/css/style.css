@@ -31,14 +31,15 @@
 --------------------------------------------------------------*/
 
 html {
-    transition: all 0.2s;
+    transition: all 0.3s;
 }
 
 body {
     font-family: "Open Sans", sans-serif;
     color: #272829;
-    background: #9CECFB;
-    background: linear-gradient(to bottom, #0052D4, #65C7F7, #9CECFB) !important;
+    background: #9CECFB transparent;
+    background: linear-gradient(to bottom, #4c87e6, #65C7F7, #9CECFB, transparent 95%) !important;
+    background-size: 60%;
 }
 
 a {
@@ -330,7 +331,7 @@ html.darkmode img {
 
 
 /*--------------------------------------------------------------
-# Hero Section   Portada de la pagina
+# Hero Section   Portada de la pagina IMAGEN  PRINCIPAL
 --------------------------------------------------------------*/
 
 #hero {
@@ -343,6 +344,8 @@ html.darkmode img {
     /*que tome el valor original de la imagen*/
     position: relative;
     background-attachment: fixed;
+    background-position: right top;
+    /*alinea el fondo en el centro y arriba*/
 }
 
 .rg_sombra {
@@ -350,8 +353,8 @@ html.darkmode img {
     /*posicion absoluta es decir flotante*/
     left: 15%;
     /*desde la izaquierda flote 15%*/
-    top: 70%;
-    /*desde arriba flote un 70%*/
+    top: 50%;
+    /*desde arriba flote un 50%*/
     -ms-transform: translate(-50%, -50%);
     /*estos atributos sirve para que nuestra pag se vean en otros navegadores*/
     -webkit-transform: translate(-50%, -50%);
@@ -363,7 +366,7 @@ html.darkmode img {
     /*ancho del sombreado sea de un 40% del total de la pantalla*/
     text-align: center;
     /*texto alineado en forma central*/
-    background-color: rgba(46, 45, 45, 0.250);
+    background-color: rgba(46, 45, 45, 0.80);
     /*color de fondo negro con una transparencia de 0.6*/
     color: #FFFFFF;
     /*color de letras blancas*/
@@ -380,7 +383,8 @@ html.darkmode img {
 
 #hero:before {
     content: "";
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(90, 74, 1, 0.733);
+    /*aplico una sombra sobre la imagen*/
     position: absolute;
     bottom: 0;
     top: 0;
@@ -390,22 +394,26 @@ html.darkmode img {
 
 #hero h1 {
     margin: 0;
-    font-size: 64px;
+    font-size: 68px;
     font-weight: 700;
     line-height: 56px;
-    color: #45505b;
+    color: #ffffff;
+    text-shadow: 4px 8px rgb(0, 0, 0);
+    /*aplico sombra al texto*/
 }
 
 #hero p {
-    color: #45505b;
+    color: #cedee9;
     margin: 15px 0 0 0;
-    font-size: 26px;
+    font-size: 28px;
     font-family: "Poppins", sans-serif;
 }
 
 #hero p span {
     color: #0563bb;
     letter-spacing: 1px;
+    text-shadow: 1px 1px rgb(255, 255, 255);
+    /*sombra al texto*/
 }
 
 #hero .social-links {
@@ -413,9 +421,10 @@ html.darkmode img {
 }
 
 #hero .social-links a {
-    font-size: 24px;
+    font-size: 30px;
+    /*tamaño de los iconos*/
     display: inline-block;
-    color: #45505b;
+    color: #bac7d4;
     line-height: 1;
     margin-right: 20px;
     transition: 0.3s;
@@ -499,7 +508,7 @@ section {
 
 .rg_img-fluid {
     border-radius: 80px;
-    opacity: 0.7;
+    filter: opacity(60%);
 }
 
 .about .section-title h2 {
